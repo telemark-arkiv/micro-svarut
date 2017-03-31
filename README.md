@@ -47,11 +47,12 @@ SVARUT_ACTION=http://www.ks.no/svarut/services/ForsendelsesServiceV5/sendForsend
     "fodselsnr": "01029400470"
   },
   "printkonfigurasjon": {
-    brevtype: "BPOST",
-    fargePrint: true,
-    tosidig: false
+    "brevtype": "BPOST",
+    "fargePrint": true,
+    "tosidig": false
   }
 }
+```
 
 ## License
 
