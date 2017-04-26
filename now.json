@@ -1,0 +1,15 @@
+{
+  "name": "micro-svarut",
+  "aliases": [
+    "svarut.service.t-fk.no"
+  ],
+  "type": "npm",
+  "env": {
+    "NODE_ENV": "production",
+    "JWT_SECRET": "@micro-svarut-jwt",
+    "SVARUT_URL": "@micro-svarut-url",
+    "SVARUT_ACTION": "@micro-svarut-action",
+    "PAPERTRAIL_HOST": "@tfk-papertrail-host",
+    "PAPERTRAIL_PORT": "@tfk-papertrail-port"
+  }
+}

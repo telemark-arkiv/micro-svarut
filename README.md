@@ -13,6 +13,10 @@ NODE_ENV=production
 JWT_SECRET=Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go
 SVARUT_URL=https://username:password@test.svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV5
 SVARUT_ACTION=http://www.ks.no/svarut/services/ForsendelsesServiceV5/sendForsendelse
+PAPERTRAIL_HOSTNAME=micro-svarut
+PAPERTRAIL_HOST=logs.papertrailapp.com
+PAPERTRAIL_PORT=12345
+
 ```
 
 ## API
