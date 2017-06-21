@@ -25,35 +25,39 @@ PAPERTRAIL_PORT=12345
 
 ```json
 {
-  "tittel": "SvarUt testdokument",
-  "dokumenter": [
+  "title": "SvarUt testdokument",
+  "documents": [
     {
-      "filsti": "base64data",
-      "filnavn": "skoleskyss_avslag_vedtak.pdf",
-      "mimetype": "application/pdf"
+      "data": "base64data",
+      "fileName": "skoleskyss_avslag_vedtak.pdf",
+      "mimeType": "application/pdf"
     }
   ],
-  "forsendelse": {
-    "avgivendeSystem": "node-svarut test",
-    "konteringskode": "1111",
-    "krevNiva4Innlogging": false,
-    "kryptert": false,
-    "kunDigitalLevering": false
+  "shipment": {
+    "emittingSystem": "node-svarut test",
+    "postingCode": "1111",
+    "level4login": false,
+    "encrypted": false,
+    "digitalDelivery": false
   },
-  "mottaker": {
-    "type": "privatPerson",
-    "navn": "Terje Tverrtryne",
-    "adresse1": "Skogsveien 42",
-    "adresse2": "",
-    "adresse3": "",
-    "postnr": "3710",
-    "poststed": "Skien",
-    "fodselsnr": "01029400470"
-  },
-  "printkonfigurasjon": {
-    "brevtype": "BPOST",
-    "fargePrint": true,
-    "tosidig": false
+  "recipients": [
+    {
+      "type": "privatPerson",
+      // "type": "Organisasjon",
+      "name": "Terje Tverrtryne",
+      "address1": "Skogsveien 42",
+      "address2": "",
+      "adress3": "",
+      "postalCode": "3710",
+      "postalCity": "Skien",
+      "personalId": "01029400470"
+      // organizationId: "940192226"
+    }
+  ],
+  "printConfiguration": {
+    "letterType": "BPOST",
+    "colorPrint": true,
+    "duplex": false
   }
 }
 ```

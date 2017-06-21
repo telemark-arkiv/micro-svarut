@@ -7,6 +7,7 @@ const { json, send } = require('micro')
 const svarUt = require('svarut')
 const config = require('./config')
 const logger = require('./lib/logger')
+const format = require('./lib/format')
 const validateJwt = require('./lib/validate-jwt')
 
 module.exports = async (req, response) => {
@@ -18,11 +19,12 @@ module.exports = async (req, response) => {
     const decoded = await validateJwt({jwt: jwt, tokenKey: config.JWT_SECRET})
     if (decoded) {
       logger(['Validated jwt'])
-      data.config = {
+      const formatedData = format(data)
+      formatedData.config = {
         url: config.SVARUT_URL,
         action: config.SVARUT_ACTION
       }
-      svarUt(data)
+      svarUt(formatedData)
         .then(id => {
           logger(['ID from svarut', id])
           send(response, 200, id)
