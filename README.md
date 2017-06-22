@@ -47,7 +47,7 @@ PAPERTRAIL_PORT=12345
       "name": "Terje Tverrtryne",
       "address1": "Skogsveien 42",
       "address2": "",
-      "adress3": "",
+      "address3": "",
       "postalCode": "3710",
       "postalCity": "Skien",
       "personalId": "01029400470"
