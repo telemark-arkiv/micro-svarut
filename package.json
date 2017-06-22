@@ -1,7 +1,7 @@
 {
   "name": "micro-svarut",
   "description": "svarut microservice",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "private": true,
   "author": {
@@ -58,7 +58,7 @@
     "marked": "0.3.6",
     "micro": "7.2.1",
     "svarut": "3.0.1",
-    "winston": "^2.3.1",
-    "winston-papertrail": "^1.0.4"
+    "winston": "2.3.1",
+    "winston-papertrail": "1.0.4"
   }
 }
