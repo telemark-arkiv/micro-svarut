@@ -19,11 +19,12 @@ module.exports = async (req, response) => {
     const decoded = await validateJwt({jwt: jwt, tokenKey: config.JWT_SECRET})
     if (decoded) {
       logger(['Validated jwt'])
-      const formatedData = format(data)
+      let formatedData = format(data)
       formatedData.config = {
         url: config.SVARUT_URL,
         action: config.SVARUT_ACTION
       }
+      console.log(formatedData)
       svarUt(formatedData)
         .then(id => {
           logger(['ID from svarut', id])
