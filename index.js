@@ -18,22 +18,21 @@ module.exports = async (req, response) => {
     const jwt = req.headers.authorization
     const decoded = await validateJwt({jwt: jwt, tokenKey: config.JWT_SECRET})
     if (decoded) {
-      logger(['Validated jwt'])
+      logger('info', ['Validated jwt'])
       let formatedData = format(data)
       formatedData.config = {
         url: config.SVARUT_URL,
         action: config.SVARUT_ACTION
       }
-      console.log(formatedData)
-      svarUt(formatedData)
-        .then(id => {
-          logger(['ID from svarut', id])
-          send(response, 200, id)
-        })
-        .catch(err => {
-          logger(['Error', err])
-          send(response, 500, err.message)
-        })
+
+      try {
+        const id = await svarUt(formatedData)
+        logger('info', ['ID from svarut', id])
+        send(response, 200, id)
+      } catch (err) {
+        logger('error', err)
+        send(response, 500, err)
+      }
     }
   } else {
     response.setHeader('Content-Type', 'text/html')
